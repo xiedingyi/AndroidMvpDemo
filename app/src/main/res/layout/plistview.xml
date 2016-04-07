@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/dicover_lv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:choiceMode="singleChoice"
+        android:divider="#ffffff"
+        android:dividerHeight="0.1dp"
+        android:fadeScrollbars="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:listSelector="#000000"
+        android:scrollbarFadeDuration="0"
+        android:scrollbars="none" />
+</LinearLayout>

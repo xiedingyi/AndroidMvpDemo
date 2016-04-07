@@ -1,0 +1,103 @@
+1.logger 日志打印
+repositories {
+    // ...
+    maven { url "https://jitpack.io" }
+  }
+
+  dependencies {
+    compile 'com.github.orhanobut:logger:1.12'
+  }
+
+ Logger.init();//初始化
+2.弹窗弹框
+   repositories {
+       mavenCentral()
+   }
+
+   dependencies {
+       compile 'cn.pedant.sweetalert:library:1.3'
+   }
+
+   SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
+   pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+   pDialog.setTitleText("Loading");
+   pDialog.setCancelable(false);
+   pDialog.show();
+
+3.android-gif-drawable gif 加载
+
+compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.+'//gif动画加载
+
+<pl.droidsonroids.gif.GifImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:src="@drawable/src_anim"
+    android:background="@drawable/bg_anim"
+    />
+
+4.SwipeBackLayout 是一个支持屏幕上下左右滑动返回上层 Activity, 关闭当前 Activity, 类似简书 App
+compile 'me.imid.swipebacklayout.lib:library:1.0.0'
+
+5.Android NumberProgressBar 进度条
+compile 'com.daimajia.numberprogressbar:library:1.2@aar'
+<com.daimajia.numberprogressbar.NumberProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            custom:progress_unreached_color="#CCCCCC"
+            custom:progress_reached_color="#3498DB"
+
+            custom:progress_unreached_bar_height="0.75dp"
+            custom:progress_reached_bar_height="1.5dp"
+
+            custom:progress_text_size="10sp"
+            custom:progress_text_color="#3498DB"
+            custom:progress_text_offset="1dp"
+            custom:progress_text_visibility="visible"
+
+            custom:progress_max="100"
+            custom:progress_curent="80"
+             />
+
+6 android-times-square日期控件
+compile 'com.squareup:android-times-square:1.6.5@aar'
+<com.squareup.timessquare.CalendarPickerView
+    android:id="@+id/calendar_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    />
+
+W7. Side-Menu.Android Side Menu 是 Yalantis 组织开源出来, 该组织因开源出一些动画很棒的开源库为大家所熟知该库是其中一个, 该库是提供翻页动画效果的侧边菜单, 动画体验超赞的
+
+    dependencies {
+        compile 'com.yalantis:sidemenu:1.0'`
+    }
+
+    repositories {
+        maven {
+            url "https://jitpack.io"
+        }
+    }
+    dependencies {
+        compile 'com.github.ozodrukh:CircularReveal:(latest-release)@aar'
+    }
+
+W8.MaterialEditText MaterialEditText 是就职于 Flipboard 的员工 扔物线 开发的, 在 AppCompat v21 中也提供了 Material Design 的控件 EditText, 可是由于比较难用, 没有提供设置颜色的 Api, 于是就产生这个第三方库
+compile 'com.rengwuxian.materialedittext:library:2.1.4'
+
+9.AndroidImageSlider AndroidImageSlider 库开发者是代码家, 该库是为 Banner 图片滑动提供多种动画效果, 还可以轻易为 Banner 加载网络图片
+dependencies {
+        compile "com.android.support:support-v4:+"
+        compile 'com.squareup.picasso:picasso:2.3.2'
+        compile 'com.nineoldandroids:library:2.4.0'
+        compile 'com.daimajia.slider:library:1.1.5@aar'
+}
+<com.daimajia.slider.library.Indicators.PagerIndicator
+        android:id="@+id/custom_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        />
+
+10.AppIntro 引导页框架
+compile 'com.github.paolorotolo:appintro:3.4.0'

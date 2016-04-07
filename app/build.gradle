@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+apply plugin: 'packer'
+def cfg = rootProject.ext.configuration // 配置
+def libs = rootProject.ext.libraries // 库
+android {
+    compileSdkVersion cfg.compileVersion
+    buildToolsVersion cfg.buildToolsVersion
+
+    defaultConfig {
+        applicationId cfg.package
+        minSdkVersion cfg.minSdk
+        targetSdkVersion cfg.targetSdk
+        versionCode cfg.version_code
+        versionName cfg.version_name
+
+        buildConfigField "String", "MARVEL_PUBLIC_KEY", "\"${marvel_public_key}\""
+        buildConfigField "String", "MARVEL_PRIVATE_KEY", "\"${marvel_private_key}\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled true//混淆
+            zipAlignEnabled true //zipalign优化
+            shrinkResources true //移除无用资源
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    // Signing
+    signingConfigs {
+        release {
+            storeFile file('../config/lfh.jks')
+            storePassword "cqlfhc"
+            keyAlias "利丰行"
+            keyPassword "cqlfhc"
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    // 注释冲突
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+}
+
+repositories{
+    flatDir{
+        dirs 'libs' //就是你放aar的目录地址
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile "com.mcxiaoke.gradle:packer-helper:${libs.packerhelper}"
+    compile "com.android.support:design:${libs.supportVersion}"
+    compile "com.android.support:appcompat-v7:${libs.supportVersion}"
+   // compile project(':library_okhttputils')
+    compile project(':PullToRefresh')//刷新
+    compile project(':library_NumberProgressBar')//进度条加载
+
+    compile 'com.jakewharton:butterknife:7.0.0'//快捷注释
+    compile 'com.github.orhanobut:logger:1.12'//日志打印
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.+'//gif动画加载
+
+//    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+//    compile 'com.squareup.okhttp:okhttp:2.7.4'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+
+}
