@@ -1,2 +1,2 @@
 # AndroidMvpDemo
-F:\Norman\AndroidMvpDemo\s
+AndroidMvpDemo
