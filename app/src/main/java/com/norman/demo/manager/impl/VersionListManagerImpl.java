@@ -51,7 +51,7 @@ public class VersionListManagerImpl implements VersionListManager {
                 .subscribe(new Observer<ApiResponse<Version>>() {
                     @Override
                     public void onCompleted() {
-                        Log.e("Manger", "完成");
+                        Log.e("MangerSD", "完成");
                     }
 
                     @Override
