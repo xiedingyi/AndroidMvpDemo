@@ -19,4 +19,4 @@
     android:duration="@android:integer/config_longAnimTime"
     android:fromYDelta="0"
     android:toYDelta="100%p" />
-<!-- From: file:/F:/Norman/as/Norman/PullToRefresh/res/anim/slide_out_to_bottom.xml --><!-- From: file:/F:/Norman/as/Norman/PullToRefresh/build/intermediates/bundles/debug/res/anim/slide_out_to_bottom.xml -->
+<!-- From: file:/F:/Norman/AndroidMvpDemo/AndroidMvpDemo/PullToRefresh/res/anim/slide_out_to_bottom.xml --><!-- From: file:/F:/Norman/AndroidMvpDemo/AndroidMvpDemo/PullToRefresh/build/intermediates/bundles/debug/res/anim/slide_out_to_bottom.xml -->
